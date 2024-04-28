@@ -340,7 +340,7 @@ async def get_ss(up_path, ss_no):
     results = await gather(*tasks)
     th_html += ''.join(f'<img src="https://graph.org{tele_id}"><br><pre>Screenshot at {stamp}</pre>' for tele_id, stamp in results)
     await aiormtree(thumbs_path)
-    link_id = (await telegraph.create_page(title="ScreenShots By PeppyLinks", content=th_html))["path"]
+    link_id = (await telegraph.create_page(title="PeppyLinks", content=th_html))["path"]
     return f"https://graph.org/{link_id}"
 
 
